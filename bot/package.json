@@ -1,0 +1,17 @@
+{
+  "name": "pupculture-bot",
+  "version": "1.0.0",
+  "description": "Discord bot client for PupCulture Cloud",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": ["discord", "pupculture", "bot"],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
+}
