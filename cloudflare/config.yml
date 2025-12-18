@@ -1,4 +1,4 @@
-tunnel: pupculture
+tunnel: 55e399d9-4562-4286-bac1-843e42840c6d
 credentials-file: /etc/cloudflared/pupculture.json
 
 ingress:
