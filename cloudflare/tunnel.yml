@@ -1,0 +1,14 @@
+tunnel: pupculture
+credentials-file: /etc/cloudflared/pupculture.json
+
+ingress:
+  - hostname: admin.pupculture.site
+    service: http://adminui:80
+
+  - hostname: api.pupculture.site
+    service: http://api:3001
+
+  - hostname: ws.pupculture.site
+    service: http://ws:3001
+
+  - service: http_status:404
