@@ -1,10 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PupCulture Admin</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --accent: #f59e0b;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.15), transparent 25%),
+                  radial-gradient(circle at 80% 0%, rgba(16, 185, 129, 0.12), transparent 30%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .panel {
+      width: min(960px, 100%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f59e0b, #f97316);
+      display: grid;
+      place-items: center;
+      font-size: 1.75rem;
+      color: #111827;
+      font-weight: 700;
+      box-shadow: 0 15px 30px rgba(245, 158, 11, 0.35);
+    }
+
+    .title {
+      font-size: 1.9rem;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      margin: 0.2rem 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #a7f3d0;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+
+    .card h3 {
+      margin: 0 0 0.35rem;
+      color: var(--text);
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>PupCulture Admin UI</h1>
-  <p>Admin UI container is running.</p>
+  <main class="panel" role="main">
+    <header class="header">
+      <div class="logo" aria-label="PupCulture logo">🐾</div>
+      <div>
+        <h1 class="title">PupCulture Admin</h1>
+        <p class="subtitle">Control center for our canine kingdom</p>
+      </div>
+    </header>
+
+    <div class="status" role="status">🟢 Admin UI container is running smoothly</div>
+
+    <section class="grid" aria-label="Admin highlights">
+      <article class="card">
+        <h3>🚀 Quick start</h3>
+        <p>Use this admin to monitor deployments, manage integrations, and keep PupCulture experiences polished.</p>
+      </article>
+      <article class="card">
+        <h3>🔒 Secure by default</h3>
+        <p>Session-aware controls and environment isolation help ensure your pack stays safe.</p>
+      </article>
+      <article class="card">
+        <h3>✨ Personal flair</h3>
+        <p>Custom gradient, soft glass effect, and playful iconography to make daily ops feel welcoming.</p>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
