@@ -1,4 +1,6 @@
-version: '3'
-services:
-  api:
-    image: node:22-alpine
+cloudflared:
+  image: cloudflare/cloudflared:latest
+  command: tunnel run pupculture
+  volumes:
+    - ./cloudflare:/etc/cloudflared
+  restart: unless-stopped
