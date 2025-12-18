@@ -16,6 +16,13 @@ services:
     depends_on:
       - api
 
+  bot:
+    build: ./bot
+    environment:
+      CF_ACCESS_CLIENT_ID: ${CF_CLIENT_ID}
+      CF_ACCESS_CLIENT_SECRET: ${CF_CLIENT_SECRET}
+      API_BASE_URL: https://api.pupculture.site
+
   ws:
     build: ./api
     command: node src/ws.js
