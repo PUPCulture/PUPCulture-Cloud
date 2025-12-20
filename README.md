@@ -32,6 +32,11 @@ The stack is composed of the following services (via `docker-compose`):
   - Connects to API via `/admin-api/*` proxy
   - Provides admin login, stats, API key management, bot listing (and can be extended)
 
+- **Bot (`bot`)**
+  - Placeholder container to run a bot behind Cloudflare Access
+  - Expects `CF_CLIENT_ID` and `CF_CLIENT_SECRET` values (see `.env.example`)
+  - Logs configuration and a heartbeat to verify credentials are injected
+
 - **Postgres (`db`)**
   - Primary database (users, bots, messages, API keys, etc.)
 
