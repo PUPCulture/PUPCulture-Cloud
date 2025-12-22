@@ -1,0 +1,37 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.19.6
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/.npmrc
+5 silly config load:file:/usr/src/node-red/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm install node-red-contrib-zoom-session@1.0.10
+8 verbose argv "install" "--no-audit" "--no-update-notifier" "--no-fund" "--save" "--save-prefix" "~" "--omit" "dev" "--engine-strict" "node-red-contrib-zoom-session@1.0.10"
+9 verbose logfile logs-max:10 dir:/data/.npm/_logs/2025-12-19T06_08_50_795Z-
+10 verbose logfile /data/.npm/_logs/2025-12-19T06_08_50_795Z-debug-0.log
+11 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly fetch manifest node-red-contrib-zoom-session@1.0.10
+15 silly packumentCache full:https://registry.npmjs.org/node-red-contrib-zoom-session cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/node-red-contrib-zoom-session 514ms (cache miss)
+17 silly packumentCache full:https://registry.npmjs.org/node-red-contrib-zoom-session set size:undefined disposed:false
+18 silly placeDep ROOT node-red-contrib-zoom-session@1.0.10 OK for: node-red-project@0.0.1 want: 1.0.10
+19 silly fetch manifest jsrsasign@10.5.7
+20 silly packumentCache full:https://registry.npmjs.org/jsrsasign cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/jsrsasign 126ms (cache miss)
+22 silly packumentCache full:https://registry.npmjs.org/jsrsasign set size:undefined disposed:false
+23 silly placeDep ROOT jsrsasign@10.5.7 OK for: node-red-contrib-zoom-session@1.0.10 want: 10.5.7
+24 silly reify moves {}
+25 silly tarball no local data for node-red-contrib-zoom-session@https://registry.npmjs.org/node-red-contrib-zoom-session/-/node-red-contrib-zoom-session-1.0.10.tgz. Extracting by manifest.
+26 silly tarball no local data for jsrsasign@https://registry.npmjs.org/jsrsasign/-/jsrsasign-10.5.7.tgz. Extracting by manifest.
+27 http fetch GET 200 https://registry.npmjs.org/node-red-contrib-zoom-session/-/node-red-contrib-zoom-session-1.0.10.tgz 252ms (cache miss)
+28 http fetch GET 200 https://registry.npmjs.org/jsrsasign/-/jsrsasign-10.5.7.tgz 472ms (cache miss)
+29 silly ADD node_modules/jsrsasign
+30 silly ADD node_modules/node-red-contrib-zoom-session
+31 verbose cwd /data
+32 verbose os Linux 6.6.87.2-microsoft-standard-WSL2
+33 verbose node v20.19.6
+34 verbose npm  v10.8.2
+35 verbose exit 0
+36 info ok

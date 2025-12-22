@@ -11,4 +11,7 @@ ingress:
   - hostname: ws.pupculture.site
     service: http://ws:3001
 
+  - hostname: files.pupculture.site
+    service: http://127.0.0.1:9001
+
   - service: http_status:404

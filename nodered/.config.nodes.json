@@ -426,5 +426,365 @@
                 "file": "/usr/src/node-red/node_modules/@node-red/nodes/core/storage/23-watch.js"
             }
         }
+    },
+    "node-red-contrib-zoom-meetings": {
+        "name": "node-red-contrib-zoom-meetings",
+        "version": "0.0.3",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "zoom-meetings": {
+                "name": "zoom-meetings",
+                "types": [
+                    "zoom-config",
+                    "zoom-meetings"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-zoom-meetings",
+                "file": "/data/node_modules/node-red-contrib-zoom-meetings/meetings/zoom-meetings.js"
+            }
+        }
+    },
+    "node-red-contrib-discord-advanced": {
+        "name": "node-red-contrib-discord-advanced",
+        "version": "3.6.0",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "discord-token": {
+                "name": "discord-token",
+                "types": [
+                    "discord-token"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discord-token.js"
+            },
+            "discordMessage": {
+                "name": "discordMessage",
+                "types": [
+                    "discordMessage"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordMessage.js"
+            },
+            "discordMessageManager": {
+                "name": "discordMessageManager",
+                "types": [
+                    "discordMessageManager"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordMessageManager.js"
+            },
+            "discordPermissions": {
+                "name": "discordPermissions",
+                "types": [
+                    "discordPermissions"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordPermissions.js"
+            },
+            "discordReactionManager": {
+                "name": "discordReactionManager",
+                "types": [
+                    "discordReactionManager"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordReactionManager.js"
+            },
+            "discordChannelName": {
+                "name": "discordChannelName",
+                "types": [
+                    "discordChannelName"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordChannelName.js"
+            },
+            "discordMember": {
+                "name": "discordMember",
+                "types": [
+                    "discordMember"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordMember.js"
+            },
+            "discordActivity": {
+                "name": "discordActivity",
+                "types": [
+                    "discordActivity"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordActivity.js"
+            },
+            "discordClient": {
+                "name": "discordClient",
+                "types": [
+                    "discordClient"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordClient.js"
+            },
+            "discordInteraction": {
+                "name": "discordInteraction",
+                "types": [
+                    "discordInteraction"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordInteraction.js"
+            },
+            "discordInteractionManager": {
+                "name": "discordInteractionManager",
+                "types": [
+                    "discordInteractionManager"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordInteractionManager.js"
+            },
+            "discordTyping": {
+                "name": "discordTyping",
+                "types": [
+                    "discordTyping"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordTyping.js"
+            },
+            "discordGuildManager": {
+                "name": "discordGuildManager",
+                "types": [
+                    "discordGuildManager"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordGuildManager.js"
+            },
+            "discordEventManager": {
+                "name": "discordEventManager",
+                "types": [
+                    "discordEventManager"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordEventManager.js"
+            },
+            "discordCommandManager": {
+                "name": "discordCommandManager",
+                "types": [
+                    "discordCommandManager"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-discord-advanced",
+                "file": "/data/node_modules/node-red-contrib-discord-advanced/discord/discordCommandManager.js"
+            }
+        }
+    },
+    "node-red-node-telegrambot": {
+        "name": "node-red-node-telegrambot",
+        "version": "0.1.6",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "telegrambot": {
+                "name": "telegrambot",
+                "types": [
+                    "telegram client config",
+                    "telegram client receiver",
+                    "telegram client sender"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-node-telegrambot",
+                "file": "/data/node_modules/node-red-node-telegrambot/telegrambot/telegrambot.js"
+            }
+        }
+    },
+    "node-red-contrib-telegrambot": {
+        "name": "node-red-contrib-telegrambot",
+        "version": "17.0.3",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "telegrambot": {
+                "name": "telegrambot",
+                "types": [
+                    "telegram bot",
+                    "telegram receiver",
+                    "telegram command",
+                    "telegram event",
+                    "telegram sender",
+                    "telegram reply",
+                    "telegram control"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-telegrambot",
+                "file": "/data/node_modules/node-red-contrib-telegrambot/telegrambot/99-telegrambot.js"
+            }
+        }
+    },
+    "node-red-contrib-telegram-lists": {
+        "name": "node-red-contrib-telegram-lists",
+        "version": "0.0.6",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "hello-world": {
+                "name": "hello-world",
+                "types": [
+                    "hello-world"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-telegram-lists",
+                "file": "/data/node_modules/node-red-contrib-telegram-lists/hello-world.js"
+            },
+            "read-list": {
+                "name": "read-list",
+                "types": [
+                    "read-list"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-telegram-lists",
+                "file": "/data/node_modules/node-red-contrib-telegram-lists/read-list.js"
+            },
+            "add-item": {
+                "name": "add-item",
+                "types": [
+                    "add-item"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-telegram-lists",
+                "file": "/data/node_modules/node-red-contrib-telegram-lists/add-item.js"
+            }
+        }
+    },
+    "node-red-contrib-zoomus-api": {
+        "name": "node-red-contrib-zoomus-api",
+        "version": "1.0.42",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "zoomus": {
+                "name": "zoomus",
+                "types": [
+                    "zoomus"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-zoomus-api",
+                "file": "/data/node_modules/node-red-contrib-zoomus-api/node.js"
+            },
+            "zoomus-config": {
+                "name": "zoomus-config",
+                "types": [
+                    "zoomus-config"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-zoomus-api",
+                "file": "/data/node_modules/node-red-contrib-zoomus-api/config.js"
+            }
+        }
+    },
+    "node-red-contrib-zoomus": {
+        "name": "node-red-contrib-zoomus",
+        "version": "2.0.1",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "zoomus": {
+                "name": "zoomus",
+                "types": [
+                    "zoomus"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-zoomus",
+                "file": "/data/node_modules/node-red-contrib-zoomus/node.js"
+            },
+            "zoomus-config": {
+                "name": "zoomus-config",
+                "types": [
+                    "zoomus-config"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-zoomus",
+                "file": "/data/node_modules/node-red-contrib-zoomus/config.js"
+            }
+        }
+    },
+    "node-red-contrib-zoom-session": {
+        "name": "node-red-contrib-zoom-session",
+        "version": "1.0.10",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "zoom-session": {
+                "name": "zoom-session",
+                "types": [
+                    "zoom-session-config",
+                    "zoom-session"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-zoom-session",
+                "file": "/data/node_modules/node-red-contrib-zoom-session/zoom-session.js"
+            }
+        }
     }
 }
