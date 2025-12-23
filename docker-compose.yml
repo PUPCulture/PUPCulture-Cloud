@@ -68,12 +68,6 @@ services:
       - ./cloudflare:/etc/cloudflared
     restart: unless-stopped
 
-  bot:
-    build: ./bot
-    environment:
-      CF_ACCESS_CLIENT_ID: ${CF_CLIENT_ID}
-      CF_ACCESS_CLIENT_SECRET: ${CF_CLIENT_SECRET}
-      API_BASE_URL: https://api.pupculture.site
 
 volumes:
   db:
