@@ -1,0 +1,100 @@
+[
+    {
+        "id": "71f307573d24e6ad",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "af6fc8aa9e40f0e6",
+        "type": "tab",
+        "label": "Video Form Bot (Fixed)",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "BOT_CONFIG_NODE",
+        "type": "telegram bot",
+        "botname": "MyFormBot",
+        "usernames": "",
+        "chatids": "-1002676383378",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "",
+        "localbotport": "8443",
+        "publicbotport": "",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "04f0686699a892bf",
+        "type": "telegram receiver",
+        "z": "af6fc8aa9e40f0e6",
+        "name": "",
+        "bot": "BOT_CONFIG_NODE",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "hasinput": false,
+        "inputs": 0,
+        "handleallupdates": false,
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "79012d8194013d1a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f6ce12f70e297503",
+        "type": "telegram sender",
+        "z": "af6fc8aa9e40f0e6",
+        "name": "",
+        "bot": "BOT_CONFIG_NODE",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 750,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79012d8194013d1a",
+        "type": "function",
+        "z": "af6fc8aa9e40f0e6",
+        "name": "Form Logic",
+        "func": "// Get the User's Chat ID (to talk back to them)\nvar userChatId = msg.payload.chatId;\nvar incomingText = msg.payload.content;\nvar userName = msg.originalMessage.from.first_name;\n\n// Retrieve saved session data\nvar session = flow.get('telegram_session_' + userChatId) || { state: 'IDLE', data: {} };\n\n// --- CONFIGURATION: PRE-FILLED ---\nvar TARGET_GROUP_ID = \"-1002676383378\"; \nvar TARGET_TOPIC_ID = 452;              \n// ---------------------------------\n\n// --- STATE 0: IDLE ---\nif (incomingText === '/start' || incomingText === '/reset') {\n    session.state = 'WAITING_FOR_NAME';\n    flow.set('telegram_session_' + userChatId, session);\n    \n    msg.payload.content = \"📝 **New Video Entry**\\n\\nFirst question:\\n**What is the name of the video?**\";\n    msg.payload.options = { parse_mode: \"Markdown\" };\n    return [msg, null]; \n}\n\n// --- STATE 1: WAITING FOR NAME ---\nelse if (session.state === 'WAITING_FOR_NAME') {\n    session.data.videoName = incomingText;\n    session.state = 'WAITING_FOR_STUDIO';\n    flow.set('telegram_session_' + userChatId, session);\n    \n    msg.payload.content = \"Got it. Question 2:\\n**What Studio made it?**\";\n    return [msg, null];\n}\n\n// --- STATE 2: WAITING FOR STUDIO ---\nelse if (session.state === 'WAITING_FOR_STUDIO') {\n    session.data.studio = incomingText;\n    session.state = 'WAITING_FOR_LENGTH';\n    flow.set('telegram_session_' + userChatId, session);\n    \n    msg.payload.content = \"Okay. Question 3:\\n**Is it Short or Long?**\";\n    \n    var keyboard = {\n        keyboard: [[\"Short\", \"Long\"]],\n        resize_keyboard: true,\n        one_time_keyboard: true\n    };\n    \n    msg.payload.options = {\n        reply_markup: JSON.stringify(keyboard),\n        parse_mode: \"Markdown\"\n    };\n    return [msg, null];\n}\n\n// --- STATE 3: WAITING FOR LENGTH (FINAL) ---\nelse if (session.state === 'WAITING_FOR_LENGTH') {\n    session.data.length = incomingText;\n    \n    var finalReport = \"✅ **New Submission**\\n\\n\" +\n                  \"📹 **Video:** \" + session.data.videoName + \"\\n\" +\n                  \"🏢 **Studio:** \" + session.data.studio + \"\\n\" +\n                  \"⏳ **Type:** \" + session.data.length + \"\\n\" +\n                  \"👤 **By:** \" + userName;\n\n    session = { state: 'IDLE', data: {} };\n    flow.set('telegram_session_' + userChatId, session);\n    \n    var msgToUser = {\n        payload: {\n            chatId: userChatId,\n            content: \"✅ **Saved!** sent to the group.\",\n            options: { \n                parse_mode: \"Markdown\",\n                reply_markup: JSON.stringify({ remove_keyboard: true }) \n            }\n        }\n    };\n\n    var msgToGroup = {\n        payload: {\n            chatId: TARGET_GROUP_ID,\n            content: finalReport,\n            options: {\n                parse_mode: \"Markdown\",\n                message_thread_id: TARGET_TOPIC_ID \n            }\n        }\n    };\n\n    return [msgToUser, msgToGroup];\n}\n\nelse {\n    return [null, null];\n}",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "f6ce12f70e297503"
+            ],
+            [
+                "f6ce12f70e297503"
+            ]
+        ]
+    }
+]

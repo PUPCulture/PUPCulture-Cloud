@@ -1,59 +1,114 @@
+/**
+ * PupCulture Bot → API Client
+ * Node.js 18+ (native fetch)
+ * Cloudflare Zero Trust + API Key auth
+ */
+
+// ===============================
+// ENVIRONMENT
+// ===============================
+
 const {
   CF_ACCESS_CLIENT_ID,
   CF_ACCESS_CLIENT_SECRET,
+  BOT_API_KEY,
   API_BASE_URL = "https://api.pupculture.site",
 } = process.env;
 
-if (!CF_ACCESS_CLIENT_ID || !CF_ACCESS_CLIENT_SECRET) {
-  console.error(
-    "Missing Cloudflare Access service token. Set CF_ACCESS_CLIENT_ID and CF_ACCESS_CLIENT_SECRET.",
-  );
-  process.exit(1);
+// ===============================
+// HARD FAILS (NO SILENT MISERY)
+// ===============================
+
+function requireEnv(name, value) {
+  if (!value) {
+    console.error(`❌ Missing required environment variable: ${name}`);
+    process.exit(1);
+  }
 }
 
-if (!process.env.BOT_API_KEY) {
-  console.error(
-    "Missing bot API key. Set BOT_API_KEY to a valid key issued by the PupCulture API.",
-  );
-  process.exit(1);
+requireEnv("CF_ACCESS_CLIENT_ID", CF_ACCESS_CLIENT_ID);
+requireEnv("CF_ACCESS_CLIENT_SECRET", CF_ACCESS_CLIENT_SECRET);
+requireEnv("BOT_API_KEY", BOT_API_KEY);
+
+// ===============================
+// HELPERS
+// ===============================
+
+async function readBody(res) {
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch {
+    return text;
+  }
 }
+
+function isCloudflareHtml(body) {
+  return typeof body === "string" && body.toLowerCase().includes("<html");
+}
+
+// ===============================
+// CORE API CALL
+// ===============================
 
 async function sendXpEvent() {
   const payload = {
     guildId: "example-guild",
     userId: "example-user",
     action: "XP_GAIN",
+    timestamp: new Date().toISOString(),
   };
 
-  const response = await fetch(`${API_BASE_URL.replace(/\/$/, "")}/bot/events`, {
+  const url =
+    API_BASE_URL.replace(/\/$/, "") +
+    "/bot/events";
+
+  const response = await fetch(url, {
     method: "POST",
     headers: {
+      // 🔐 Cloudflare Zero Trust (machine identity)
       "CF-Access-Client-Id": CF_ACCESS_CLIENT_ID,
       "CF-Access-Client-Secret": CF_ACCESS_CLIENT_SECRET,
+
+      // 🔑 Application authorization
+      "Authorization": `Bearer ${BOT_API_KEY}`,
+
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.BOT_API_KEY}`,
     },
     body: JSON.stringify(payload),
   });
 
   if (!response.ok) {
-    const body = await safeJson(response);
-    throw new Error(`API blocked by Cloudflare or missing permissions: ${response.status} ${JSON.stringify(body)}`);
+    const body = await readBody(response);
+
+    if (isCloudflareHtml(body)) {
+      throw new Error(
+        `❌ BLOCKED BY CLOUDFLARE (${response.status})\n` +
+        `→ Check Zero Trust Access policy\n` +
+        `→ Service Auth MUST be allowed`
+      );
+    }
+
+    throw new Error(
+      `❌ API ERROR (${response.status})\n` +
+      `${JSON.stringify(body, null, 2)}`
+    );
   }
 
-  const body = await safeJson(response);
-  console.log("Event posted", body);
+  const result = await readBody(response);
+  console.log("✅ Event successfully posted:");
+  console.log(result);
 }
 
-async function safeJson(res) {
+// ===============================
+// ENTRY POINT
+// ===============================
+
+(async () => {
   try {
-    return await res.json();
+    await sendXpEvent();
   } catch (err) {
-    return null;
+    console.error(err.message);
+    process.exit(1);
   }
-}
-
-sendXpEvent().catch((err) => {
-  console.error(err.message);
-  process.exit(1);
-});
+})();

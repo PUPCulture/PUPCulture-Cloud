@@ -19,9 +19,8 @@ services:
   bot:
     build: ./bot
     environment:
-      CF_ACCESS_CLIENT_ID: ${CF_CLIENT_ID}
-      CF_ACCESS_CLIENT_SECRET: ${CF_CLIENT_SECRET}
-      BOT_API_KEY: ${BOT_API_KEY}
+      CF_ACCESS_CLIENT_ID: 88be931599ea90ff138ff36434321949.access
+      CF_ACCESS_CLIENT_SECRET: bf1dd4a319bf1a74921e6d2d83b9248aa6520d96a4ac1a9fd20616c905d6765a
       API_BASE_URL: https://api.pupculture.site
 
   ws:
@@ -68,6 +67,13 @@ services:
     volumes:
       - ./cloudflare:/etc/cloudflared
     restart: unless-stopped
+
+  bot:
+    build: ./bot
+    environment:
+      CF_ACCESS_CLIENT_ID: ${CF_CLIENT_ID}
+      CF_ACCESS_CLIENT_SECRET: ${CF_CLIENT_SECRET}
+      API_BASE_URL: https://api.pupculture.site
 
 volumes:
   db:

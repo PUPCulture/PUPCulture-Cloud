@@ -2,5 +2,15 @@
     "name": "node-red-project",
     "description": "A Node-RED Project",
     "version": "0.0.1",
-    "private": true
+    "private": true,
+    "dependencies": {
+        "node-red-contrib-discord-advanced": "~3.6.0",
+        "node-red-contrib-telegram-lists": "~0.0.6",
+        "node-red-contrib-telegrambot": "~17.0.3",
+        "node-red-contrib-zoom-meetings": "~0.0.3",
+        "node-red-contrib-zoom-session": "~1.0.10",
+        "node-red-contrib-zoomus": "~2.0.1",
+        "node-red-contrib-zoomus-api": "~1.0.42",
+        "node-red-node-telegrambot": "~0.1.6"
+    }
 }

@@ -1,0 +1,168 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.19.6
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/.npmrc
+5 silly config load:file:/usr/src/node-red/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm install node-red-contrib-zoomus-api@1.0.42
+8 verbose argv "install" "--no-audit" "--no-update-notifier" "--no-fund" "--save" "--save-prefix" "~" "--omit" "dev" "--engine-strict" "node-red-contrib-zoomus-api@1.0.42"
+9 verbose logfile logs-max:10 dir:/data/.npm/_logs/2025-12-19T06_08_01_166Z-
+10 verbose logfile /data/.npm/_logs/2025-12-19T06_08_01_166Z-debug-0.log
+11 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly fetch manifest node-red-contrib-zoomus-api@1.0.42
+15 silly packumentCache full:https://registry.npmjs.org/node-red-contrib-zoomus-api cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/node-red-contrib-zoomus-api 505ms (cache miss)
+17 silly packumentCache full:https://registry.npmjs.org/node-red-contrib-zoomus-api set size:undefined disposed:false
+18 silly placeDep ROOT node-red-contrib-zoomus-api@1.0.42 OK for: node-red-project@0.0.1 want: 1.0.42
+19 silly fetch manifest jsonwebtoken@^8.5.1
+20 silly packumentCache full:https://registry.npmjs.org/jsonwebtoken cache-miss
+21 silly fetch manifest request-promise@^4.2.4
+22 silly packumentCache full:https://registry.npmjs.org/request-promise cache-miss
+23 http fetch GET 200 https://registry.npmjs.org/request-promise 115ms (cache miss)
+24 silly packumentCache full:https://registry.npmjs.org/request-promise set size:undefined disposed:false
+25 http fetch GET 200 https://registry.npmjs.org/jsonwebtoken 165ms (cache miss)
+26 silly packumentCache full:https://registry.npmjs.org/jsonwebtoken set size:undefined disposed:false
+27 silly fetch manifest request@^2.88.0
+28 silly packumentCache full:https://registry.npmjs.org/request cache-miss
+29 http fetch GET 200 https://registry.npmjs.org/request 140ms (cache revalidated)
+30 silly packumentCache full:https://registry.npmjs.org/request set size:307273 disposed:false
+31 silly placeDep ROOT jsonwebtoken@8.5.1 OK for: node-red-contrib-zoomus-api@1.0.42 want: ^8.5.1
+32 silly placeDep ROOT request-promise@4.2.6 OK for: node-red-contrib-zoomus-api@1.0.42 want: ^4.2.4
+33 silly fetch manifest ms@^2.1.1
+34 silly packumentCache full:https://registry.npmjs.org/ms cache-miss
+35 silly fetch manifest jws@^3.2.2
+36 silly packumentCache full:https://registry.npmjs.org/jws cache-miss
+37 silly fetch manifest semver@^5.6.0
+38 silly packumentCache full:https://registry.npmjs.org/semver cache-miss
+39 http fetch GET 200 https://registry.npmjs.org/jws 105ms (cache miss)
+40 silly packumentCache full:https://registry.npmjs.org/jws set size:undefined disposed:false
+41 silly fetch manifest lodash.once@^4.0.0
+42 silly packumentCache full:https://registry.npmjs.org/lodash.once cache-miss
+43 http fetch GET 200 https://registry.npmjs.org/semver 118ms (cache miss)
+44 silly packumentCache full:https://registry.npmjs.org/semver set size:undefined disposed:false
+45 silly fetch manifest lodash.includes@^4.3.0
+46 silly packumentCache full:https://registry.npmjs.org/lodash.includes cache-miss
+47 http fetch GET 200 https://registry.npmjs.org/ms 177ms (cache revalidated)
+48 silly packumentCache full:https://registry.npmjs.org/ms set size:92208 disposed:false
+49 silly fetch manifest lodash.isnumber@^3.0.3
+50 silly packumentCache full:https://registry.npmjs.org/lodash.isnumber cache-miss
+51 http fetch GET 200 https://registry.npmjs.org/lodash.once 98ms (cache miss)
+52 silly packumentCache full:https://registry.npmjs.org/lodash.once set size:undefined disposed:false
+53 silly fetch manifest lodash.isstring@^4.0.1
+54 silly packumentCache full:https://registry.npmjs.org/lodash.isstring cache-miss
+55 http fetch GET 200 https://registry.npmjs.org/lodash.includes 108ms (cache miss)
+56 silly packumentCache full:https://registry.npmjs.org/lodash.includes set size:undefined disposed:false
+57 silly fetch manifest lodash.isboolean@^3.0.3
+58 silly packumentCache full:https://registry.npmjs.org/lodash.isboolean cache-miss
+59 http fetch GET 200 https://registry.npmjs.org/lodash.isnumber 105ms (cache miss)
+60 silly packumentCache full:https://registry.npmjs.org/lodash.isnumber set size:undefined disposed:false
+61 silly fetch manifest lodash.isinteger@^4.0.4
+62 silly packumentCache full:https://registry.npmjs.org/lodash.isinteger cache-miss
+63 http fetch GET 200 https://registry.npmjs.org/lodash.isstring 104ms (cache miss)
+64 silly packumentCache full:https://registry.npmjs.org/lodash.isstring set size:undefined disposed:false
+65 silly fetch manifest lodash.isplainobject@^4.0.6
+66 silly packumentCache full:https://registry.npmjs.org/lodash.isplainobject cache-miss
+67 http fetch GET 200 https://registry.npmjs.org/lodash.isboolean 103ms (cache miss)
+68 silly packumentCache full:https://registry.npmjs.org/lodash.isboolean set size:undefined disposed:false
+69 silly fetch manifest tough-cookie@^2.3.3
+70 silly packumentCache full:https://registry.npmjs.org/tough-cookie cache-miss
+71 http fetch GET 200 https://registry.npmjs.org/lodash.isinteger 95ms (cache miss)
+72 silly packumentCache full:https://registry.npmjs.org/lodash.isinteger set size:undefined disposed:false
+73 silly fetch manifest request-promise-core@1.1.4
+74 silly packumentCache full:https://registry.npmjs.org/request-promise-core cache-miss
+75 http fetch GET 200 https://registry.npmjs.org/lodash.isplainobject 105ms (cache miss)
+76 silly packumentCache full:https://registry.npmjs.org/lodash.isplainobject set size:undefined disposed:false
+77 http fetch GET 200 https://registry.npmjs.org/tough-cookie 146ms (cache revalidated)
+78 silly packumentCache full:https://registry.npmjs.org/tough-cookie set size:145095 disposed:false
+79 http fetch GET 200 https://registry.npmjs.org/request-promise-core 147ms (cache revalidated)
+80 silly packumentCache full:https://registry.npmjs.org/request-promise-core set size:18969 disposed:false
+81 silly placeDep ROOT jws@3.2.3 OK for: jsonwebtoken@8.5.1 want: ^3.2.2
+82 silly placeDep ROOT lodash.includes@4.3.0 OK for: jsonwebtoken@8.5.1 want: ^4.3.0
+83 silly placeDep ROOT lodash.isboolean@3.0.3 OK for: jsonwebtoken@8.5.1 want: ^3.0.3
+84 silly placeDep ROOT lodash.isinteger@4.0.4 OK for: jsonwebtoken@8.5.1 want: ^4.0.4
+85 silly placeDep ROOT lodash.isnumber@3.0.3 OK for: jsonwebtoken@8.5.1 want: ^3.0.3
+86 silly placeDep ROOT lodash.isplainobject@4.0.6 OK for: jsonwebtoken@8.5.1 want: ^4.0.6
+87 silly placeDep ROOT lodash.isstring@4.0.1 OK for: jsonwebtoken@8.5.1 want: ^4.0.1
+88 silly placeDep ROOT lodash.once@4.1.1 OK for: jsonwebtoken@8.5.1 want: ^4.0.0
+89 silly placeDep node_modules/jsonwebtoken ms@2.1.3 OK for: jsonwebtoken@8.5.1 want: ^2.1.1
+90 silly placeDep ROOT semver@5.7.2 OK for: jsonwebtoken@8.5.1 want: ^5.6.0
+91 silly fetch manifest jwa@^1.4.2
+92 silly packumentCache full:https://registry.npmjs.org/jwa cache-miss
+93 http fetch GET 200 https://registry.npmjs.org/jwa 87ms (cache miss)
+94 silly packumentCache full:https://registry.npmjs.org/jwa set size:undefined disposed:false
+95 silly placeDep ROOT jwa@1.4.2 OK for: jws@3.2.3 want: ^1.4.2
+96 silly fetch manifest ecdsa-sig-formatter@1.0.11
+97 silly packumentCache full:https://registry.npmjs.org/ecdsa-sig-formatter cache-miss
+98 silly fetch manifest buffer-equal-constant-time@^1.0.1
+99 silly packumentCache full:https://registry.npmjs.org/buffer-equal-constant-time cache-miss
+100 http fetch GET 200 https://registry.npmjs.org/ecdsa-sig-formatter 96ms (cache miss)
+101 silly packumentCache full:https://registry.npmjs.org/ecdsa-sig-formatter set size:undefined disposed:false
+102 http fetch GET 200 https://registry.npmjs.org/buffer-equal-constant-time 98ms (cache miss)
+103 silly packumentCache full:https://registry.npmjs.org/buffer-equal-constant-time set size:undefined disposed:false
+104 silly placeDep ROOT buffer-equal-constant-time@1.0.1 OK for: jwa@1.4.2 want: ^1.0.1
+105 silly placeDep ROOT ecdsa-sig-formatter@1.0.11 OK for: jwa@1.4.2 want: 1.0.11
+106 silly fetch manifest request@^2.34
+107 silly packumentCache full:https://registry.npmjs.org/request cache-hit
+108 silly placeDep node_modules/request-promise request-promise-core@1.1.4 OK for: request-promise@4.2.6 want: 1.1.4
+109 silly placeDep node_modules/request-promise tough-cookie@2.5.0 OK for: request-promise@4.2.6 want: ^2.3.3
+110 silly reify moves {}
+111 silly tarball no local data for ecdsa-sig-formatter@https://registry.npmjs.org/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.11.tgz. Extracting by manifest.
+112 silly tarball no local data for buffer-equal-constant-time@https://registry.npmjs.org/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz. Extracting by manifest.
+113 silly tarball no local data for jwa@https://registry.npmjs.org/jwa/-/jwa-1.4.2.tgz. Extracting by manifest.
+114 silly tarball no local data for semver@https://registry.npmjs.org/semver/-/semver-5.7.2.tgz. Extracting by manifest.
+115 silly tarball no local data for lodash.once@https://registry.npmjs.org/lodash.once/-/lodash.once-4.1.1.tgz. Extracting by manifest.
+116 silly tarball no local data for lodash.isstring@https://registry.npmjs.org/lodash.isstring/-/lodash.isstring-4.0.1.tgz. Extracting by manifest.
+117 silly tarball no local data for lodash.isplainobject@https://registry.npmjs.org/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz. Extracting by manifest.
+118 silly tarball no local data for lodash.isnumber@https://registry.npmjs.org/lodash.isnumber/-/lodash.isnumber-3.0.3.tgz. Extracting by manifest.
+119 silly tarball no local data for lodash.isinteger@https://registry.npmjs.org/lodash.isinteger/-/lodash.isinteger-4.0.4.tgz. Extracting by manifest.
+120 silly tarball no local data for lodash.isboolean@https://registry.npmjs.org/lodash.isboolean/-/lodash.isboolean-3.0.3.tgz. Extracting by manifest.
+121 silly tarball no local data for lodash.includes@https://registry.npmjs.org/lodash.includes/-/lodash.includes-4.3.0.tgz. Extracting by manifest.
+122 silly tarball no local data for request-promise@https://registry.npmjs.org/request-promise/-/request-promise-4.2.6.tgz. Extracting by manifest.
+123 silly tarball no local data for jsonwebtoken@https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz. Extracting by manifest.
+124 silly tarball no local data for jws@https://registry.npmjs.org/jws/-/jws-3.2.3.tgz. Extracting by manifest.
+125 silly tarball no local data for node-red-contrib-zoomus-api@https://registry.npmjs.org/node-red-contrib-zoomus-api/-/node-red-contrib-zoomus-api-1.0.42.tgz. Extracting by manifest.
+126 silly tarball no local data for request-promise-core@https://registry.npmjs.org/request-promise-core/-/request-promise-core-1.1.4.tgz. Extracting by manifest.
+127 http fetch GET 200 https://registry.npmjs.org/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz 973ms (cache miss)
+128 http fetch GET 200 https://registry.npmjs.org/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.11.tgz 1014ms (cache miss)
+129 http fetch GET 200 https://registry.npmjs.org/request-promise-core/-/request-promise-core-1.1.4.tgz 1087ms (cache miss)
+130 http fetch GET 200 https://registry.npmjs.org/lodash.once/-/lodash.once-4.1.1.tgz 1238ms (cache miss)
+131 http fetch GET 200 https://registry.npmjs.org/jwa/-/jwa-1.4.2.tgz 1253ms (cache miss)
+132 http fetch GET 200 https://registry.npmjs.org/lodash.isnumber/-/lodash.isnumber-3.0.3.tgz 1301ms (cache miss)
+133 http fetch GET 200 https://registry.npmjs.org/lodash.isboolean/-/lodash.isboolean-3.0.3.tgz 1328ms (cache miss)
+134 http fetch GET 200 https://registry.npmjs.org/lodash.isstring/-/lodash.isstring-4.0.1.tgz 1370ms (cache miss)
+135 http fetch GET 200 https://registry.npmjs.org/lodash.isinteger/-/lodash.isinteger-4.0.4.tgz 1371ms (cache miss)
+136 http fetch GET 200 https://registry.npmjs.org/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz 1378ms (cache miss)
+137 http fetch GET 200 https://registry.npmjs.org/node-red-contrib-zoomus-api/-/node-red-contrib-zoomus-api-1.0.42.tgz 1374ms (cache miss)
+138 http fetch GET 200 https://registry.npmjs.org/lodash.includes/-/lodash.includes-4.3.0.tgz 1403ms (cache miss)
+139 http fetch GET 200 https://registry.npmjs.org/jws/-/jws-3.2.3.tgz 1463ms (cache miss)
+140 http fetch GET 200 https://registry.npmjs.org/request-promise/-/request-promise-4.2.6.tgz 1482ms (cache miss)
+141 warn deprecated request-promise@4.2.6: request-promise has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
+142 http fetch GET 200 https://registry.npmjs.org/semver/-/semver-5.7.2.tgz 1527ms (cache miss)
+143 http fetch GET 200 https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz 1529ms (cache miss)
+144 silly ADD node_modules/ecdsa-sig-formatter
+145 silly ADD node_modules/buffer-equal-constant-time
+146 silly ADD node_modules/jwa
+147 silly ADD node_modules/semver
+148 silly ADD node_modules/lodash.once
+149 silly ADD node_modules/lodash.isstring
+150 silly ADD node_modules/lodash.isplainobject
+151 silly ADD node_modules/lodash.isnumber
+152 silly ADD node_modules/lodash.isinteger
+153 silly ADD node_modules/lodash.isboolean
+154 silly ADD node_modules/lodash.includes
+155 silly ADD node_modules/jws
+156 silly ADD node_modules/request-promise
+157 silly ADD node_modules/request-promise/node_modules/tough-cookie
+158 silly ADD node_modules/request-promise/node_modules/request-promise-core
+159 silly ADD node_modules/jsonwebtoken
+160 silly ADD node_modules/jsonwebtoken/node_modules/ms
+161 silly ADD node_modules/node-red-contrib-zoomus-api
+162 verbose cwd /data
+163 verbose os Linux 6.6.87.2-microsoft-standard-WSL2
+164 verbose node v20.19.6
+165 verbose npm  v10.8.2
+166 verbose exit 0
+167 info ok
