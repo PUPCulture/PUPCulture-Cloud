@@ -5,7 +5,16 @@ const {
 } = process.env;
 
 if (!CF_ACCESS_CLIENT_ID || !CF_ACCESS_CLIENT_SECRET) {
-  console.error("Missing Cloudflare Access service token. Set CF_ACCESS_CLIENT_ID and CF_ACCESS_CLIENT_SECRET.");
+  console.error(
+    "Missing Cloudflare Access service token. Set CF_ACCESS_CLIENT_ID and CF_ACCESS_CLIENT_SECRET.",
+  );
+  process.exit(1);
+}
+
+if (!process.env.BOT_API_KEY) {
+  console.error(
+    "Missing bot API key. Set BOT_API_KEY to a valid key issued by the PupCulture API.",
+  );
   process.exit(1);
 }
 
@@ -22,7 +31,7 @@ async function sendXpEvent() {
       "CF-Access-Client-Id": CF_ACCESS_CLIENT_ID,
       "CF-Access-Client-Secret": CF_ACCESS_CLIENT_SECRET,
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.BOT_API_KEY || ""}`,
+      Authorization: `Bearer ${process.env.BOT_API_KEY}`,
     },
     body: JSON.stringify(payload),
   });

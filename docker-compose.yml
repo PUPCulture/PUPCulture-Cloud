@@ -21,6 +21,7 @@ services:
     environment:
       CF_ACCESS_CLIENT_ID: ${CF_CLIENT_ID}
       CF_ACCESS_CLIENT_SECRET: ${CF_CLIENT_SECRET}
+      BOT_API_KEY: ${BOT_API_KEY}
       API_BASE_URL: https://api.pupculture.site
 
   ws:
