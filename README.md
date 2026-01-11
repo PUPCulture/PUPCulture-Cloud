@@ -107,3 +107,47 @@ pupculture-cloud/
         ├── bot.json               # Example metadata
         ├── index.js               # Example auto-registering bot
         └── README.md
+
+---
+
+## Build & Run
+
+### Prerequisites
+
+- Docker + Docker Compose
+- Cloudflare Tunnel credentials (see `cloudflare/`)
+
+### Configure
+
+1. Copy the environment template and fill in values:
+   ```bash
+   cp .env.example .env
+   ```
+2. Ensure the Cloudflare Tunnel credentials file referenced in
+   `cloudflare/config.yml` exists (typically `cloudflare/pupculture-admin.json`).
+
+### Build Images
+
+From the repo root:
+
+```bash
+docker compose build
+```
+
+### Start the Stack
+
+```bash
+docker compose up -d
+```
+
+### Verify
+
+```bash
+docker compose ps
+```
+
+If you need to rebuild after code changes:
+
+```bash
+docker compose up -d --build
+```
