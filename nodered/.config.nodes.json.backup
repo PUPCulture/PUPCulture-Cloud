@@ -766,5 +766,25 @@
                 "file": "/data/node_modules/node-red-contrib-zoomus/config.js"
             }
         }
+    },
+    "node-red-contrib-zoom-session": {
+        "name": "node-red-contrib-zoom-session",
+        "version": "1.0.10",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "zoom-session": {
+                "name": "zoom-session",
+                "types": [
+                    "zoom-session-config",
+                    "zoom-session"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-zoom-session",
+                "file": "/data/node_modules/node-red-contrib-zoom-session/zoom-session.js"
+            }
+        }
     }
 }
