@@ -4,6 +4,10 @@ const app = express();
 app.use(express.json());
 
 app.use((req, res, next) => {
+  if (req.path === "/health") {
+    return next();
+  }
+
   const cfClientId = req.headers["cf-access-client-id"]; // Cloudflare Access service token headers
   const cfClientSecret = req.headers["cf-access-client-secret"];
   const requireServiceToken = process.env.CF_ACCESS_REQUIRED !== "false";
