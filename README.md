@@ -123,7 +123,11 @@ pupculture-cloud/
    ```bash
    cp .env.example .env
    ```
-2. Ensure the Cloudflare Tunnel credentials file referenced in
+2. If you're running the API without Cloudflare Access in local development, set
+   `CF_ACCESS_REQUIRED=false` in `.env`. The API expects Cloudflare Access service
+   token headers (`cf-access-client-id` and `cf-access-client-secret`) on every
+   request when this is enabled.
+3. Ensure the Cloudflare Tunnel credentials file referenced in
    `cloudflare/config.yml` exists (typically `cloudflare/pupculture-admin.json`).
 
 ### Build Images
