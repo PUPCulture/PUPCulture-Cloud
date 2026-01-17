@@ -10,7 +10,7 @@ app.use((req, res, next) => {
 
   const cfClientId = req.headers["cf-access-client-id"]; // Cloudflare Access service token headers
   const cfClientSecret = req.headers["cf-access-client-secret"];
-  const requireServiceToken = process.env.CF_ACCESS_REQUIRED !== "false";
+  const requireServiceToken = process.env.CF_ACCESS_REQUIRED !== "true";
 
   if (requireServiceToken && (!cfClientId || !cfClientSecret)) {
     return res.status(403).json({ error: "Missing service token" });
