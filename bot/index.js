@@ -16,14 +16,8 @@ requireEnv("CF_ACCESS_CLIENT_ID");
 requireEnv("CF_ACCESS_CLIENT_SECRET");
 requireEnv("BOT_API_KEY");
 
-async function sendXpEvent() {
-  const payload = {
-    guildId: "example-guild",
-    userId: "example-user",
-    action: "XP_GAIN",
-  };
-
-  const res = await fetch(`${API_BASE_URL}/bot/events`, {
+async function requestSingleUseToken(discordId) {
+  const res = await fetch(`${API_BASE_URL}/discord/token`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -31,7 +25,7 @@ async function sendXpEvent() {
       "CF-Access-Client-Secret": CF_ACCESS_CLIENT_SECRET,
       "Authorization": `Bearer ${BOT_API_KEY}`,
     },
-    body: JSON.stringify(payload),
+    body: JSON.stringify({ discordId }),
   });
 
   if (!res.ok) {
@@ -39,10 +33,12 @@ async function sendXpEvent() {
     throw new Error(`API rejected request: ${res.status} ${text}`);
   }
 
-  console.log("✅ XP event sent");
+  const data = await res.json();
+  console.log("✅ Single-use token generated:", data);
 }
 
-sendXpEvent().catch((err) => {
+const discordId = process.env.DISCORD_ID ?? "example-discord-user";
+requestSingleUseToken(discordId).catch((err) => {
   console.error("❌ Bot error:", err.message);
   process.exit(1);
 });
