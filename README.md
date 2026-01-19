@@ -155,3 +155,11 @@ If you need to rebuild after code changes:
 ```bash
 docker compose up -d --build
 ```
+
+---
+
+## UI Embedded Launch Layout (Design First)
+
+See the initial layout structure and role-based UX notes for a one-click embedded Admin UI launch in:
+
+- `docs/ui-embedded-launch.md`
