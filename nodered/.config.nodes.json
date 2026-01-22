@@ -1,7 +1,7 @@
 {
     "node-red": {
         "name": "node-red",
-        "version": "4.1.2",
+        "version": "4.1.3",
         "local": false,
         "user": false,
         "nodes": {
@@ -787,143 +787,22 @@
             }
         }
     },
-    "@patricktobias86/node-red-telegram-account": {
-        "name": "@patricktobias86/node-red-telegram-account",
-        "version": "1.1.22",
+    "node-red-contrib-credentials": {
+        "name": "node-red-contrib-credentials",
+        "version": "0.2.3",
         "local": true,
         "user": true,
         "nodes": {
-            "telegram-account-auth": {
-                "name": "telegram-account-auth",
+            "credent": {
+                "name": "credent",
                 "types": [
-                    "auth"
+                    "credentials"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "@patricktobias86/node-red-telegram-account",
-                "file": "/data/node_modules/@patricktobias86/node-red-telegram-account/nodes/auth.js"
-            },
-            "telegram-account-config": {
-                "name": "telegram-account-config",
-                "types": [
-                    "config"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@patricktobias86/node-red-telegram-account",
-                "file": "/data/node_modules/@patricktobias86/node-red-telegram-account/nodes/config.js"
-            },
-            "telegram-account-receiver": {
-                "name": "telegram-account-receiver",
-                "types": [
-                    "receiver"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@patricktobias86/node-red-telegram-account",
-                "file": "/data/node_modules/@patricktobias86/node-red-telegram-account/nodes/receiver.js"
-            },
-            "telegram-account-command": {
-                "name": "telegram-account-command",
-                "types": [
-                    "command"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@patricktobias86/node-red-telegram-account",
-                "file": "/data/node_modules/@patricktobias86/node-red-telegram-account/nodes/command.js"
-            },
-            "telegram-account-send-message": {
-                "name": "telegram-account-send-message",
-                "types": [
-                    "send-message"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@patricktobias86/node-red-telegram-account",
-                "file": "/data/node_modules/@patricktobias86/node-red-telegram-account/nodes/send-message.js"
-            },
-            "telegram-account-send-file": {
-                "name": "telegram-account-send-file",
-                "types": [
-                    "send-files"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@patricktobias86/node-red-telegram-account",
-                "file": "/data/node_modules/@patricktobias86/node-red-telegram-account/nodes/send-file.js"
-            },
-            "telegram-account-entity": {
-                "name": "telegram-account-entity",
-                "types": [
-                    "get-entity"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@patricktobias86/node-red-telegram-account",
-                "file": "/data/node_modules/@patricktobias86/node-red-telegram-account/nodes/get-entity.js"
-            },
-            "telegram-account-delete-message": {
-                "name": "telegram-account-delete-message",
-                "types": [
-                    "delete-message"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@patricktobias86/node-red-telegram-account",
-                "file": "/data/node_modules/@patricktobias86/node-red-telegram-account/nodes/delete-message.js"
-            },
-            "telegram-account-iter-dialog": {
-                "name": "telegram-account-iter-dialog",
-                "types": [
-                    "iter-dialogs"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@patricktobias86/node-red-telegram-account",
-                "file": "/data/node_modules/@patricktobias86/node-red-telegram-account/nodes/iter-dialogs.js"
-            },
-            "telegram-account-iter-messages": {
-                "name": "telegram-account-iter-messages",
-                "types": [
-                    "iter-messages"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@patricktobias86/node-red-telegram-account",
-                "file": "/data/node_modules/@patricktobias86/node-red-telegram-account/nodes/iter-messages.js"
-            },
-            "telegram-account-promote-admin": {
-                "name": "telegram-account-promote-admin",
-                "types": [
-                    "promote-admin"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@patricktobias86/node-red-telegram-account",
-                "file": "/data/node_modules/@patricktobias86/node-red-telegram-account/nodes/promote-admin.js"
-            },
-            "telegram-account-resolve-userid": {
-                "name": "telegram-account-resolve-userid",
-                "types": [
-                    "resolve-userid"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@patricktobias86/node-red-telegram-account",
-                "file": "/data/node_modules/@patricktobias86/node-red-telegram-account/nodes/resolve-userid.js"
+                "module": "node-red-contrib-credentials",
+                "file": "/data/node_modules/node-red-contrib-credentials/credentials/credentials.js"
             }
         }
     }

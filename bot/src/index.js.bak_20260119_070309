@@ -1,5 +1,5 @@
-﻿/**
- * PupCulture Bot â†’ API Client
+/**
+ * PupCulture Bot → API Client
  * Node.js 18+ (native fetch)
  * Cloudflare Zero Trust + API Key auth
  */
@@ -21,7 +21,7 @@ const {
 
 function requireEnv(name, value) {
   if (!value) {
-    console.error(`âŒ Missing required environment variable: ${name}`);
+    console.error(`❌ Missing required environment variable: ${name}`);
     process.exit(1);
   }
 }
@@ -44,7 +44,7 @@ async function readBody(res) {
 }
 
 function isCloudflareHtml(body) {
-  return typeof body === "string" && body.toLowerCase().includes("cloudflare access");
+  return typeof body === "string" && body.toLowerCase().includes("<html");
 }
 
 // ===============================
@@ -66,11 +66,11 @@ async function sendXpEvent() {
   const response = await fetch(url, {
     method: "POST",
     headers: {
-      // ðŸ” Cloudflare Zero Trust (machine identity)
+      // 🔐 Cloudflare Zero Trust (machine identity)
       "CF-Access-Client-Id": CF_ACCESS_CLIENT_ID,
       "CF-Access-Client-Secret": CF_ACCESS_CLIENT_SECRET,
 
-      // ðŸ”‘ Application authorization
+      // 🔑 Application authorization
       "Authorization": `Bearer ${BOT_API_KEY}`,
 
       "Content-Type": "application/json",
@@ -83,20 +83,20 @@ async function sendXpEvent() {
 
     if (isCloudflareHtml(body)) {
       throw new Error(
-        `âŒ BLOCKED BY CLOUDFLARE (${response.status})\n` +
-        `â†’ Check Zero Trust Access policy\n` +
-        `â†’ Service Auth MUST be allowed`
+        `❌ BLOCKED BY CLOUDFLARE (${response.status})\n` +
+        `→ Check Zero Trust Access policy\n` +
+        `→ Service Auth MUST be allowed`
       );
     }
 
     throw new Error(
-      `âŒ API ERROR (${response.status})\n` +
+      `❌ API ERROR (${response.status})\n` +
       `${JSON.stringify(body, null, 2)}`
     );
   }
 
   const result = await readBody(response);
-  console.log("âœ… Event successfully posted:");
+  console.log("✅ Event successfully posted:");
   console.log(result);
 }
 
@@ -112,4 +112,3 @@ async function sendXpEvent() {
     process.exit(1);
   }
 })();
-

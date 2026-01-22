@@ -39,10 +39,6 @@ app.get("/", (_, res) => {
 
 
 // ---- Bot events endpoint (Cloudflare Access + BOT_API_KEY) ----
-// --------------------------------------------------------------
-
-
-// ---- Bot events endpoint (Cloudflare Access + BOT_API_KEY) ----
 app.post("/bot/events", (req, res) => {
   const auth = req.headers.authorization || "";
   const token = auth.startsWith("Bearer ") ? auth.slice(7) : null;
@@ -62,7 +58,6 @@ app.post("/bot/events", (req, res) => {
 app.listen(3001, () =>
   console.log("API listening on 3001")
 );
-
 
 
 
