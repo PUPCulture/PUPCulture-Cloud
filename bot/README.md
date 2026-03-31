@@ -11,4 +11,6 @@ Environment variables expected at runtime:
 
 You can generate a bot API key by running `node api/scripts/create-bot-api-key.mjs` from the repo root, then provide the value via `BOT_API_KEY`.
 
+To request a single-use token for a Discord user, set `DISCORD_ID` before starting the container. The bot will call the API `/discord/token` endpoint and log the response, which contains the generated token and its TTL.
+
 The container currently emits configuration details and a heartbeat log so it is easy to verify that Cloudflare Access credentials are being injected correctly.
