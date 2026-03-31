@@ -5,6 +5,7 @@
     "private": true,
     "dependencies": {
         "@patricktobias86/node-red-telegram-account": "~1.1.22",
+        "node-red-contrib-credentials": "~0.2.3",
         "node-red-contrib-discord-advanced": "~3.6.0",
         "node-red-contrib-telegram-lists": "~0.0.6",
         "node-red-contrib-telegrambot": "~17.0.3",

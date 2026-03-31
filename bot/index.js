@@ -2,7 +2,7 @@ const {
   CF_ACCESS_CLIENT_ID,
   CF_ACCESS_CLIENT_SECRET,
   BOT_API_KEY,
-  API_BASE_URL = "https://api.pupculture.site",
+  API_BASE_URL = "http://api:3001",
 } = process.env;
 
 function requireEnv(name) {

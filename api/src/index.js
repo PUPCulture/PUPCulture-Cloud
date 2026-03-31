@@ -11,7 +11,7 @@ app.use((req, res, next) => {
 
   const cfClientId = req.headers["cf-access-client-id"]; // Cloudflare Access service token headers
   const cfClientSecret = req.headers["cf-access-client-secret"];
-  const requireServiceToken = process.env.CF_ACCESS_REQUIRED !== "true";
+  const requireServiceToken = process.env.CF_ACCESS_REQUIRED !== "false";
 
   if (requireServiceToken && (!cfClientId || !cfClientSecret)) {
     return res.status(403).json({ error: "Missing service token" });
@@ -103,3 +103,7 @@ app.post("/discord/token/redeem", (req, res) => {
 app.listen(3001, () =>
   console.log("API listening on 3001")
 );
+
+
+
+
